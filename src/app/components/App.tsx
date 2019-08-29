@@ -1,12 +1,18 @@
 import React from 'react';
-import { Todos } from 'todo-list';
+import styled from 'styled-components';
+import { TodoList } from 'todo-list';
+
+const Container = styled.div`
+  width: 250px;
+  margin: 10px auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+`;
 
 export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Todos />
-      </header>
-    </div>
+    <Container>
+      <TodoList />
+    </Container>
   );
 }
