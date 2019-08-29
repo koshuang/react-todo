@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { TodoList } from 'todo-list';
+import { TodoDashboard } from 'todo-list';
 
 const Container = styled.div`
   width: 250px;
@@ -12,7 +12,7 @@ const Container = styled.div`
 export const App: React.FC = () => {
   return (
     <Container>
-      <TodoList />
+      <TodoDashboard />
     </Container>
   );
 }
