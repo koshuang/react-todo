@@ -20,7 +20,8 @@
     "noEmit": true,
     "jsx": "react",
     "paths": {
-      "todo-list": ["./modules/todo-list"]
+      "shared": ["./modules/shared"],
+      "todo-list": ["./modules/todo-list"],
     }
   },
   "include": [
