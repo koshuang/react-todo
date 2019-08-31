@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { Button } from 'shared';
 import { TodoForm, TodoItem } from 'todo-list';
 
@@ -6,12 +7,17 @@ interface IAddTodoProps {
   onTodoAdded(todoItem: TodoItem): void;
 }
 
+const Container = styled.div`
+  padding-top: 5px;
+  padding-bottom: 5px;
+`;
+
 export function AddTodo(props: IAddTodoProps) {
   const { onTodoAdded } = props;
   const [editing, setEditing] = useState(false);
 
   return (
-    <>
+    <Container>
       {editing && (
         <TodoForm
           onSubmit={handleSubmit}
@@ -29,7 +35,7 @@ export function AddTodo(props: IAddTodoProps) {
           </Button>
         </>
       )}
-    </>
+    </Container>
   );
 
   function handleSubmit(todoItem: TodoItem) {

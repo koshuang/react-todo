@@ -11,6 +11,24 @@ const Container = styled.div`
   .todo-item {
     padding-top: 10px;
     padding-bottom: 10px;
+    line-height: 28px;
+
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .todo-item-delete {
+    height: 24px;
+    margin-top: 2px;
+
+    cursor: pointer;
+
+    &:hover {
+      color: ${props => props.theme.infoColor};
+    }
   }
 `;
 
@@ -48,7 +66,9 @@ export function TodoListItem(props: ITodoListItemProps) {
       {!editing && (
         <div className="todo-item">
           <span>{todoItem.title}</span>
-          <span onClick={handleDelete}><X /></span>
+          <span className="todo-item-delete" onClick={handleDelete}>
+            <X />
+          </span>
         </div>
       )}
     </Container>

@@ -13,7 +13,6 @@ const ButtonStyle = styled.button<IButtonProps>`
   color: ${(props) => props.primary ? 'white' : props.theme.primaryColor};
 
   font-size: 1em;
-  margin: 1em;
   padding: 0.25em 1em;
   border: 2px solid ${props => props.theme.primaryColor};
   border-radius: 3px;

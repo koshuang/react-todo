@@ -1,18 +1,31 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+import { Page } from 'shared';
 import { TodoDashboard } from 'todo-list';
+import { Header, Menu } from 'app';
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+    font-family: 'Roboto', sans-serif;
+  }
+`
 
 const Container = styled.div`
-  width: 250px;
+  width: 500px;
   margin: 10px auto;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
+  font-size: 16px;
 `;
 
 export const App: React.FC = () => {
   return (
     <Container>
-      <TodoDashboard />
+      <GlobalStyles />
+      <Page
+        header={<Header />}
+        menu={<Menu />}
+        main={<TodoDashboard />}
+      />
     </Container>
   );
 }

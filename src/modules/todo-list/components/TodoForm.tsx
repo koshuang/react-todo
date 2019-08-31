@@ -3,13 +3,27 @@ import styled from 'styled-components';
 import { Button, Link } from 'shared';
 import { TodoItem } from 'todo-list';
 
+interface ITodoFormProps {
+  todoItem: TodoItem;
+  onSubmit(todoItem: TodoItem): void;
+  onCancel(todoItem?: TodoItem): void;
+}
+
+const Container = styled.div`
+  margin-bottom: 9px;
+
+  .submit {
+    margin-right: 5px;
+  }
+`;
+
 const FormInput = styled.input`
-  width: 235px;
+  width: 500px;
   outline: none;
-  font-size: 13px;
+  font-size: 14px;
   padding-top: 7px;
   padding-bottom: 7px;
-  padding-left: 10px;
+  margin-bottom: 6px;
 `;
 
 TodoForm.defaultProps = {
@@ -22,23 +36,25 @@ export function TodoForm(props: ITodoFormProps) {
   const [value, setValue] = useState(currentTitle || '');
 
   return (
-    <div>
+    <Container>
       <form onSubmit={handleSubmit} data-testid="form">
         <FormInput
           value={value}
           placeholder='Enter new todo'
           onChange={e => setValue(e.target.value)}
         />
-        <Button>
-          { todoItem ? 'Save' : 'Add'}
-        </Button>
-        <Link
-          onClick={() => onCancel(todoItem)}
-        >
-          Cancel
-        </Link>
+        <span className="operations">
+          <Button className="submit">
+            { todoItem ? 'Save' : 'Add'}
+          </Button>
+          <Link
+            onClick={() => onCancel(todoItem)}
+          >
+            Cancel
+          </Link>
+        </span>
       </form>
-    </div>
+    </Container>
   );
 
   function handleSubmit(event: React.FormEvent) {
@@ -61,10 +77,4 @@ export function TodoForm(props: ITodoFormProps) {
   function isForUpdate() {
     return !!todoItem;
   }
-}
-
-interface ITodoFormProps {
-  todoItem: TodoItem;
-  onSubmit(todoItem: TodoItem): void;
-  onCancel(todoItem?: TodoItem): void;
 }
