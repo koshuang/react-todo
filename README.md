@@ -1,4 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# react-todo
+A Todo app built with React ecosystem.
+
+## Features
+1. Add todo
+1. Check todo
+1. Delete todo
+1. Filter todo
+1. Cache (After reload)
+
+## Tech Stack
+1. Typescript
+1. React (bootstrapped with [Create React App](https://github.com/facebook/create-react-app))
+1. styled-component
+1. immer
+1. Jest / enzyme / @testing-library/react
 
 ## Available Scripts
 
