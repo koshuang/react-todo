@@ -17,7 +17,7 @@ export function TodoDashboard() {
   return (
     <ThemeProvider theme={theme}>
       <Wrapper>
-        <TodoList todoItems={todoItems} />
+        <TodoList todoItems={todoItems} onUpdate={(updateTodoItem)} />
         <AddTodo onTodoAdded={addTodoItem} />
       </Wrapper>
     </ThemeProvider>
@@ -25,6 +25,12 @@ export function TodoDashboard() {
 
   function addTodoItem(todoItem: TodoItem) {
     todoFacade.add(todoItem);
+
+    setTodoItems(todoFacade.getAllTodoItems());
+  }
+
+  function updateTodoItem(todoItem: TodoItem) {
+    todoFacade.update(todoItem);
 
     setTodoItems(todoFacade.getAllTodoItems());
   }

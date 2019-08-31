@@ -12,9 +12,14 @@ const FormInput = styled.input`
   padding-left: 10px;
 `;
 
+TodoForm.defaultProps = {
+  todoItem: null,
+}
+
 export function TodoForm(props: ITodoFormProps) {
-  const { onSubmit, onCancel } = props;
-  const [value, setValue] = useState('');
+  const { todoItem, onSubmit, onCancel } = props;
+  const currentTitle = todoItem && todoItem.title;
+  const [value, setValue] = useState(currentTitle || '');
 
   return (
     <div>
@@ -25,10 +30,10 @@ export function TodoForm(props: ITodoFormProps) {
           onChange={e => setValue(e.target.value)}
         />
         <Button>
-          Add
+          { todoItem ? 'Save' : 'Add'}
         </Button>
         <Link
-          onClick={onCancel}
+          onClick={() => onCancel(todoItem)}
         >
           Cancel
         </Link>
@@ -41,14 +46,25 @@ export function TodoForm(props: ITodoFormProps) {
 
     if (!value) return;
 
-    const todoItem: TodoItem = new TodoItem(value, false);
+    if (isForUpdate()) {
+      todoItem.title = value;
+      onSubmit(todoItem);
+    } else {
+      const newTodoItem: TodoItem = new TodoItem(value, false);
+      onSubmit(newTodoItem);
+    }
 
-    onSubmit(todoItem);
+
     setValue('');
+  }
+
+  function isForUpdate() {
+    return !!todoItem;
   }
 }
 
 interface ITodoFormProps {
+  todoItem: TodoItem;
   onSubmit(todoItem: TodoItem): void;
-  onCancel(): void;
+  onCancel(todoItem?: TodoItem): void;
 }
