@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import { ITheme } from 'shared';
 
 interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
@@ -16,6 +17,12 @@ const ButtonStyle = styled.button<IButtonProps>`
   padding: 0.25em 1em;
   border: 2px solid ${props => props.theme.primaryColor};
   border-radius: 3px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${(props) => props.primary ? lighten(0.1, props.theme.primaryColor) : 'white'};
+    border-color: ${(props) => props.primary ? lighten(0.1, props.theme.primaryColor) : 'white'};
+  }
 `;
 
 export class Button extends React.Component<IButtonProps> {

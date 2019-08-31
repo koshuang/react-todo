@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { TodoListItem, TodoItem } from 'todo-list';
 
 interface ITodoListProps {
@@ -6,6 +7,10 @@ interface ITodoListProps {
   onUpdate(todoItem: TodoItem): void;
   onDelete(todoItem: TodoItem): void;
 }
+
+const Container = styled.div`
+  width: 600px;
+`;
 
 export function TodoList(props: ITodoListProps) {
   const { todoItems, onUpdate, onDelete } = props;
@@ -38,7 +43,7 @@ export function TodoList(props: ITodoListProps) {
   }
 
   return (
-    <>
+    <Container>
       {todoItems.map((todoItem: any) => (
         <div
           key={todoItem.id}
@@ -53,6 +58,6 @@ export function TodoList(props: ITodoListProps) {
           />
         </div>
       ))}
-    </>
+    </Container>
   );
 }

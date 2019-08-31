@@ -10,7 +10,7 @@ interface ITodoFormProps {
 }
 
 const Container = styled.div`
-  margin-bottom: 9px;
+  margin-top: 9px;
 
   .submit {
     margin-right: 5px;
@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 const FormInput = styled.input`
-  width: 500px;
+  width: 550px;
   outline: none;
   font-size: 14px;
   padding-top: 7px;
@@ -43,7 +43,7 @@ export function TodoForm(props: ITodoFormProps) {
           placeholder='Enter new todo'
           onChange={e => setValue(e.target.value)}
         />
-        <span className="operations">
+        <div className="operations">
           <Button className="submit">
             { todoItem ? 'Save' : 'Add'}
           </Button>
@@ -52,7 +52,7 @@ export function TodoForm(props: ITodoFormProps) {
           >
             Cancel
           </Link>
-        </span>
+        </div>
       </form>
     </Container>
   );

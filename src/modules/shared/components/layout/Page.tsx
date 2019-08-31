@@ -9,6 +9,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
 
     background-color: ${(props: IThemeProps) => props.theme.backgroundColor};
+    color: ${(props: IThemeProps) => props.theme.backgroundColorFive};
     font-size: 16px;
   }
 `;
@@ -26,7 +27,7 @@ const GridContainer = styled.div<IThemeProps>`
 
   .header {
     grid-area: header;
-    background-color: ${(props: IThemeProps) => props.theme.backgroundColorSecondary};
+    background-color: ${(props: IThemeProps) => props.theme.backgroundColorThird};
   }
 
   .sidebar {

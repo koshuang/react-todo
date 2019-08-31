@@ -1,9 +1,14 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { DefaultPubSubContext } from 'shared';
+import { DefaultPubSubContext, IThemeProps } from 'shared';
 import { AddTodo, TodoItem, TodoList, TodoFacade } from 'todo-list';
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<IThemeProps>`
+  padding: 30px;
+
+  .title {
+    margin: 10px 0;
+  }
 `;
 
 export function TodoDashboard() {
@@ -15,13 +20,13 @@ export function TodoDashboard() {
   useEffect(() => {
     setTodoItems(todoFacade.getAllTodoItems());
     context.subscribe!('filter-todo', (data: any) => {
-      console.log(data);
       filterTodoItems(data.filter);
     });
   }, []);
 
   return (
     <Wrapper>
+      <h1 className="title">Todos</h1>
       <TodoList
         todoItems={todoItems}
         onUpdate={(updateTodoItem)}

@@ -1,7 +1,7 @@
 import { ITheme } from 'shared';
 
 export const theme: ITheme = {
-  primaryColor              : '#007bff',
+  primaryColor              : '#0097D1',
   infoColor                 : '#1890ff',
   successColor              : '#52c41a',
   processingColor           : '#1890ff',

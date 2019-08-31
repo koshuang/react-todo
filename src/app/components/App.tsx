@@ -12,7 +12,7 @@ export const App: React.FC = () => {
         header={<Header />}
         sidebar={<Sidebar />}
         main={<TodoDashboard />}
-        footer={<div>footer</div>}
+        footer={<div>Made by Kos Huang</div>}
       />
     </PubSubContext.Provider>
   );
