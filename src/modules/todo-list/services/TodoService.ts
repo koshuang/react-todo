@@ -48,7 +48,8 @@ export class TodoService {
   }
 
   protected saveToLocal() {
-    const rawJson = JSON.stringify(this.getAllTodoItems());
+    const todoItems = this.getAllTodoItems();
+    const rawJson = JSON.stringify(todoItems);
     localStorage.setItem(TodoService.LOCAL_STORAGE_KEY, rawJson);
   }
 }

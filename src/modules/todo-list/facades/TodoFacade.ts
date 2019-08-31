@@ -1,9 +1,11 @@
-import { TodoItem, TodoService } from 'todo-list';
+import { TodoItem } from 'todo-list';
+import { TodoService } from '../services/TodoService';
 
-export class TodoFacade {
-  protected todoService: TodoService = new TodoService();
+class TodoFacade {
+  protected todoService: TodoService;
 
   constructor() {
+    this.todoService = new TodoService();
     this.todoService.loadFromLocalStorage();
   }
 
@@ -35,3 +37,5 @@ export class TodoFacade {
     return items;
   }
 }
+
+export const todoFacade = new TodoFacade();

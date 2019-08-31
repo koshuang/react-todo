@@ -1,1 +1,1 @@
-export * from './TodoFacade';
+export * from './todoFacade';
