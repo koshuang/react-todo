@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { TodoListItem, TodoItem } from 'todo-list';
-
-const Container = styled.div`
-  &.hover {
-    cursor: crosshair;
-  }
-`;
 
 interface ITodoListProps {
   todoItems: TodoItem[];

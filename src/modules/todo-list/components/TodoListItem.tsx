@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react';
+import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { X } from 'react-feather';
 import { TodoItem, TodoForm } from 'todo-list';

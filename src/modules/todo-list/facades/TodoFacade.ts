@@ -22,4 +22,16 @@ export class TodoFacade {
   delete(todoItem: TodoItem) {
     return this.todoService.delete(todoItem);
   }
+
+  getFilteredTodoItems(filter: string) {
+    const items = this.getAllTodoItems();
+
+    if (filter === 'ongoing') {
+      return items.filter((item: TodoItem) => !item.completed);
+    } else if (filter === 'completed') {
+      return items.filter((item: TodoItem) => item.completed);
+    }
+
+    return items;
+  }
 }
