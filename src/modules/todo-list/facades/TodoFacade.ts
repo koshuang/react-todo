@@ -18,4 +18,8 @@ export class TodoFacade {
   update(todoItem: TodoItem) {
     return this.todoService.update(todoItem);
   }
+
+  delete(todoItem: TodoItem) {
+    return this.todoService.delete(todoItem);
+  }
 }

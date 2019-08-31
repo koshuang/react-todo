@@ -11,10 +11,11 @@ const Container = styled.div`
 interface ITodoListProps {
   todoItems: TodoItem[];
   onUpdate(todoItem: TodoItem): void;
+  onDelete(todoItem: TodoItem): void;
 }
 
 export function TodoList(props: ITodoListProps) {
-  const { todoItems, onUpdate } = props;
+  const { todoItems, onUpdate, onDelete } = props;
   const [currentEditingTodoItem, setCurrentEditingTodoItem] = useState<null|TodoItem>(null);
 
   function isEditing(todoItem: TodoItem): boolean {
@@ -34,6 +35,11 @@ export function TodoList(props: ITodoListProps) {
     setCurrentEditingTodoItem(null);
   }
 
+  function handleDelete(todoItem: TodoItem) {
+    onDelete(todoItem);
+    setCurrentEditingTodoItem(null);
+  }
+
   function handleCancel() {
     setCurrentEditingTodoItem(null);
   }
@@ -49,6 +55,7 @@ export function TodoList(props: ITodoListProps) {
             todoItem={todoItem}
             editing={isEditing(todoItem)}
             onUpdate={handleUpdate}
+            onDelete={handleDelete}
             onCancel={handleCancel}
           />
         </div>

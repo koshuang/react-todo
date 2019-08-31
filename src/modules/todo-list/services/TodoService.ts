@@ -40,6 +40,13 @@ export class TodoService {
     this.saveToLocal();
   }
 
+  delete(todoItem: TodoItem) {
+    this.todoItemMap = produce(this.todoItemMap, draftState => {
+      draftState.delete(todoItem.id);
+    });
+    this.saveToLocal();
+  }
+
   protected saveToLocal() {
     const rawJson = JSON.stringify(this.getAllTodoItems());
     localStorage.setItem(TodoService.LOCAL_STORAGE_KEY, rawJson);
