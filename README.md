@@ -1,5 +1,5 @@
 # react-todo
-A Todo app built with React ecosystem.
+A Todo app built with React ecosystem and modular design.
 
 * Demo
   * [demo site](https://1ms84.sse.codesandbox.io/)
@@ -18,6 +18,15 @@ A Todo app built with React ecosystem.
 1. styled-component
 1. immer
 1. Jest / enzyme / @testing-library/react
+
+## Architecture
+1. Modular design
+1. Custom PobSub hook for components to easily interact with each others
+1. Theme design
+
+## TODOs
+1. Responsive design for mobile
+1. Using better reactive library like Rxjs
 
 ## Available Scripts
 
