@@ -5,23 +5,42 @@ import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { TodoForm } from './TodoForm';
 
-const addTodoItem = jest.fn();
+const onSubmit = jest.fn();
+const onCancel = jest.fn();
+
+function setUpForm() {
+  return render(
+    <TodoForm onSubmit={onSubmit} onCancel={onCancel} />
+  );
+}
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TodoForm onSubmit={addTodoItem} />, div);
+  ReactDOM.render(<TodoForm onSubmit={onSubmit} onCancel={onCancel} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders correctly', () => {
-  const component = shallow(<TodoForm onSubmit={addTodoItem} />)
+  const component = shallow(<TodoForm onSubmit={onSubmit} onCancel={onCancel} />)
   expect(component).toMatchSnapshot()
 });
 
+it('should has a Add button', () => {
+  const { getByText } = setUpForm();
+  const button = getByText('Add');
+
+  expect(button).toBeDefined;
+});
+
+it('should has a Cancel button', () => {
+  const { getByText } = setUpForm();
+  const button = getByText('Cancel');
+
+  expect(button).toBeDefined;
+});
+
 it('should clear the input after form submit', () => {
-  const {getByPlaceholderText, getByTestId} = render(
-    <TodoForm onSubmit={addTodoItem} />
-  );
+  const { getByPlaceholderText, getByTestId } = setUpForm();
   const input = getByPlaceholderText(/Enter/);
 
   fireEvent.change(getByPlaceholderText(/Enter/i), {target: {value: 'chuck'}})

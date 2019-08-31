@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { TodoItem } from '../entities';
+import { Button, Link } from 'shared';
+import { TodoItem } from 'todo-list';
 
 const FormInput = styled.input`
   width: 235px;
@@ -12,18 +13,25 @@ const FormInput = styled.input`
 `;
 
 export function TodoForm(props: ITodoFormProps) {
-  const { onSubmit } = props;
+  const { onSubmit, onCancel } = props;
   const [value, setValue] = useState('');
 
   return (
     <div>
-      <p>Enter your todo and hit the Enter key </p>
       <form onSubmit={handleSubmit} data-testid="form">
         <FormInput
           value={value}
           placeholder='Enter new todo'
           onChange={e => setValue(e.target.value)}
         />
+        <Button>
+          Add
+        </Button>
+        <Link
+          onClick={onCancel}
+        >
+          Cancel
+        </Link>
       </form>
     </div>
   );
@@ -42,4 +50,5 @@ export function TodoForm(props: ITodoFormProps) {
 
 interface ITodoFormProps {
   onSubmit(todoItem: TodoItem): void;
+  onCancel(): void;
 }
