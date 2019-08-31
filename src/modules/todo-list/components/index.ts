@@ -4,3 +4,4 @@ export * from './AddTodo';
 export * from './TodoDashboard';
 export * from './TodoForm';
 export * from './TodoList';
+export * from './TodoListItem';
