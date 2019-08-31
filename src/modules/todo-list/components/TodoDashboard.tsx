@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 import { AddTodo, TodoItem, TodoList, TodoFacade, theme } from 'todo-list';
 
 const Wrapper = styled.div`
@@ -15,16 +15,14 @@ export function TodoDashboard() {
   }, []);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Wrapper>
-        <TodoList
-          todoItems={todoItems}
-          onUpdate={(updateTodoItem)}
-          onDelete={(deleteTodoItem)}
-        />
-        <AddTodo onTodoAdded={addTodoItem} />
-      </Wrapper>
-    </ThemeProvider>
+    <Wrapper>
+      <TodoList
+        todoItems={todoItems}
+        onUpdate={(updateTodoItem)}
+        onDelete={(deleteTodoItem)}
+      />
+      <AddTodo onTodoAdded={addTodoItem} />
+    </Wrapper>
   );
 
   function addTodoItem(todoItem: TodoItem) {
