@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { darken } from 'polished';
 import { IThemeProps } from 'shared';
 import { theme } from 'todo-list';
 
