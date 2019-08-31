@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-import produce from 'immer';
-import { AddTodo, TodoItem, TodoList, theme } from 'todo-list';
+import { AddTodo, TodoItem, TodoList, TodoFacade, theme } from 'todo-list';
 
 const Wrapper = styled.div`
 `;
@@ -9,6 +8,11 @@ const Wrapper = styled.div`
 export function TodoDashboard() {
   const initTodoItems: TodoItem[] = [];
   const [todoItems, setTodoItems] = useState(initTodoItems);
+  const todoFacade = new TodoFacade();
+
+  useEffect(() => {
+    setTodoItems(todoFacade.getAllTodoItems());
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
@@ -20,10 +24,8 @@ export function TodoDashboard() {
   );
 
   function addTodoItem(todoItem: TodoItem) {
-    const newItems: TodoItem[] = produce(todoItems, draftState => {
-      draftState.push(todoItem);
-    });
+    todoFacade.add(todoItem);
 
-    setTodoItems(newItems);
+    setTodoItems(todoFacade.getAllTodoItems());
   }
 }
