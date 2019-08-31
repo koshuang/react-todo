@@ -1,6 +1,7 @@
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { X } from 'react-feather';
+import { Checkbox } from 'shared';
 import { TodoItem, TodoForm } from 'todo-list';
 
 const Container = styled.div`
@@ -53,6 +54,12 @@ export function TodoListItem(props: ITodoListItemProps) {
     onDelete(todoItem);
   }
 
+  function handleToggleComplete(event: MouseEvent) {
+    todoItem.completed = !todoItem.completed;
+
+    onUpdate(todoItem);
+  }
+
   return (
     <Container>
       {editing && (
@@ -64,12 +71,18 @@ export function TodoListItem(props: ITodoListItemProps) {
       )}
 
       {!editing && (
-        <div className="todo-item">
-          <span>{todoItem.title}</span>
+        <span className="todo-item">
+          <span>
+            <Checkbox
+              checked={todoItem.completed}
+              onChange={handleToggleComplete}
+            />
+            <span>{todoItem.title}</span>
+          </span>
           <span className="todo-item-delete" onClick={handleDelete}>
             <X />
           </span>
-        </div>
+        </span>
       )}
     </Container>
   );
