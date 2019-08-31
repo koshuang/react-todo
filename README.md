@@ -1,6 +1,10 @@
 # react-todo
 A Todo app built with React ecosystem.
 
+* Demo
+  * [demo site](https://1ms84.sse.codesandbox.io/)
+  * [codesandbox](https://codesandbox.io/s/github/koshuang/react-todo)
+
 ## Features
 1. Add todo
 1. Check todo
