@@ -1,21 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { TodoList } from './TodoList';
+import { TodoList, TodoItem } from 'todo-list';
+
+function setupTodoItems() {
+  const todoItems: TodoItem[] = [
+    new TodoItem('test'),
+  ];
+
+  return todoItems;
+}
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<TodoList />, div);
+  const todoItems: TodoItem[] = setupTodoItems();
+
+  ReactDOM.render(<TodoList todoItems={todoItems} />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
 
 it('renders correctly', () => {
-  const component = shallow(<TodoList />)
+  const todoItems: TodoItem[] = setupTodoItems();
+  const component = shallow(<TodoList todoItems={todoItems} />)
   expect(component).toMatchSnapshot()
 })
 
-it('renders welcome message', () => {
-  const wrapper = shallow(<TodoList />);
-  const welcome = <div>hi</div>;
-  expect(wrapper.contains(welcome)).toEqual(true);
+it('renders todo items', () => {
+  const todoItems: TodoItem[] = setupTodoItems();
+  const wrapper = shallow(<TodoList todoItems={todoItems} />);
+  expect(wrapper.contains('test')).toEqual(true);
 });
