@@ -1,7 +1,7 @@
 import { TodoItem } from 'todo-list';
 import { TodoService } from '../services/TodoService';
 
-class TodoFacade {
+class TodosFacade {
   protected todoService: TodoService;
 
   constructor() {
@@ -38,4 +38,4 @@ class TodoFacade {
   }
 }
 
-export const todoFacade = new TodoFacade();
+export const todosFacade = new TodosFacade();
