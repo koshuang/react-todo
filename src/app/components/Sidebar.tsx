@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoSidebarMenu } from 'todo-list';
+import { TodoSidebarMenu } from '@modules/todo-list';
 
 export function Sidebar() {
   return (

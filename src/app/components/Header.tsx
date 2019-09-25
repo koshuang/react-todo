@@ -1,5 +1,5 @@
 import React from 'react';
-import { TodoHeader } from 'todo-list';
+import { TodoHeader } from '@modules/todo-list';
 
 export function Header() {
   return (

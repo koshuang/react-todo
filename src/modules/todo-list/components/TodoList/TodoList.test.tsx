@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { TodoList, TodoItem } from 'todo-list';
+import { TodoList, TodoItem } from '@modules/todo-list';
 
 function setupTodoItems() {
   const todoItems: TodoItem[] = [

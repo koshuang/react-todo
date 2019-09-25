@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { TodoListItem, TodoItem } from 'todo-list';
+import { TodoListItem, TodoItem } from '@modules/todo-list';
 
 const editing = false;
 const onUpdate = jest.fn();

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { DefaultPubSubContext, IThemeProps } from 'shared';
-import { AddTodo, TodoItem, TodoList, todosFacade } from 'todo-list';
+import { DefaultPubSubContext, IThemeProps } from '@modules/shared';
+import { AddTodo, TodoItem, TodoList, todosFacade } from '@modules/todo-list';
 
 const Wrapper = styled.div<IThemeProps>`
   padding: 30px;

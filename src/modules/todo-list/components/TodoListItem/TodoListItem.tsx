@@ -1,8 +1,8 @@
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import { X } from 'react-feather';
-import { Checkbox } from 'shared';
-import { TodoItem, TodoForm } from 'todo-list';
+import { Checkbox } from '@modules/shared';
+import { TodoItem, TodoForm } from '@modules/todo-list';
 
 const Container = styled.div`
   &.hover {

@@ -1,4 +1,4 @@
-import { ITheme } from 'shared';
+import { ITheme } from '@modules/shared';
 
 export const theme: ITheme = {
   primaryColor              : '#0097D1',

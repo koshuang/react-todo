@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Button } from 'shared';
-import { TodoForm, TodoItem } from 'todo-list';
+import { Button } from '@modules/shared';
+import { TodoForm, TodoItem } from '@modules/todo-list';
 
 interface IAddTodoProps {
   onTodoAdded(todoItem: TodoItem): void;

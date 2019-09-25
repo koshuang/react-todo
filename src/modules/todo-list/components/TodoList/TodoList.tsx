@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { TodoListItem, TodoItem } from 'todo-list';
+import { TodoListItem, TodoItem } from '@modules/todo-list';
 
 interface ITodoListProps {
   todoItems: TodoItem[];

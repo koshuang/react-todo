@@ -1,4 +1,4 @@
-import { TodoItem } from 'todo-list';
+import { TodoItem } from '@modules/todo-list';
 import { TodoService } from '../services/TodoService';
 
 class TodosFacade {

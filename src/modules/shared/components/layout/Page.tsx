@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { IThemeProps } from 'shared';
+import { IThemeProps } from '@modules/shared';
 
 const GridContainer = styled.div<IThemeProps>`
   display: grid;

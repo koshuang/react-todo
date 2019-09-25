@@ -1,7 +1,7 @@
 import React, { HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { lighten } from 'polished';
-import { ITheme } from 'shared';
+import { ITheme } from '@modules/shared';
 
 interface IButtonProps extends HTMLAttributes<HTMLButtonElement> {
   primary?: boolean;

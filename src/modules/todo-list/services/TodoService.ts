@@ -1,5 +1,5 @@
 import produce from 'immer';
-import { TodoItem } from 'todo-list';
+import { TodoItem } from '@modules/todo-list';
 
 export class TodoService {
   static LOCAL_STORAGE_KEY = 'react-todo';

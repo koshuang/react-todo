@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { darken } from 'polished';
-import { DefaultPubSubContext, IThemeProps } from 'shared';
+import { DefaultPubSubContext, IThemeProps } from '@modules/shared';
 
 const Container = styled.div<IThemeProps>`
   .list {
