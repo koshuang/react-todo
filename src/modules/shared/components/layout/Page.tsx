@@ -1,18 +1,6 @@
 import React from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { IThemeProps } from 'shared';
-import { theme } from 'todo-list';
-
-const GlobalStyles = createGlobalStyle`
-  body {
-    @import url('https://fonts.googleapis.com/css?family=Roboto');
-    font-family: 'Roboto', sans-serif;
-
-    background-color: ${(props: IThemeProps) => props.theme.backgroundColor};
-    color: ${(props: IThemeProps) => props.theme.backgroundColorFive};
-    font-size: 16px;
-  }
-`;
 
 const GridContainer = styled.div<IThemeProps>`
   display: grid;
@@ -56,7 +44,17 @@ const GridContainer = styled.div<IThemeProps>`
 `;
 
 export function Page(props: any) {
-  const { header, sidebar, main, footer } = props;
+  const { header, sidebar, main, footer, theme } = props;
+  const GlobalStyles = createGlobalStyle`
+    body {
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+      font-family: 'Roboto', sans-serif;
+
+      background-color: ${theme.backgroundColor};
+      color: ${theme.backgroundColorFive};
+      font-size: 16px;
+    }
+  `;
 
   return (
     <ThemeProvider theme={theme}>
