@@ -1,4 +1,4 @@
-import { ITheme } from '@modules/shared';
+import { ITheme } from '@modules/core';
 
 export interface IThemeProps {
   theme: ITheme;

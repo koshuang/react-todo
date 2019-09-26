@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Columns } from 'react-feather';
-import { IThemeProps } from '@modules/shared';
+import { IThemeProps } from '@modules/core';
 
 const Container = styled.div<IThemeProps>`
   display: flex;

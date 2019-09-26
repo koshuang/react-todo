@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page, usePubSub, DefaultPubSubContext } from '@modules/shared';
+import { Page, usePubSub, DefaultPubSubContext } from '@modules/core';
 import { TodoDashboard, TodoHeader, TodoSidebarMenu, theme } from '@modules/todo-list';
 
 export const App: React.FC = () => {
