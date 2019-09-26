@@ -1,7 +1,6 @@
 import React from 'react';
 import { Page, usePubSub, DefaultPubSubContext } from '@modules/shared';
-import { TodoDashboard, theme } from '@modules/todo-list';
-import { Header, Sidebar } from 'app';
+import { TodoDashboard, TodoHeader, TodoSidebarMenu, theme } from '@modules/todo-list';
 
 export const App: React.FC = () => {
   const { PubSubContext, publish, subscribe, unsubscribe } = usePubSub(DefaultPubSubContext);
@@ -10,8 +9,8 @@ export const App: React.FC = () => {
     <PubSubContext.Provider value={{ publish, subscribe, unsubscribe }}>
       <Page
         theme={theme}
-        header={<Header />}
-        sidebar={<Sidebar />}
+        header={<TodoHeader />}
+        sidebar={<TodoSidebarMenu />}
         main={<TodoDashboard />}
         footer={<div>Made by Kos Huang</div>}
       />
