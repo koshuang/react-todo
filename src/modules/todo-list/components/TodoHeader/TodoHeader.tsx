@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Columns } from 'react-feather';
-import { IThemeProps } from '@modules/core';
 
-const Container = styled.div<IThemeProps>`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
