@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
 import styled from 'styled-components';
 import { darken } from 'polished';
-import { DefaultPubSubContext, IThemeProps } from '@modules/core';
+import { IThemeProps } from '@modules/core';
+import { DefaultPubSubContext } from '@modules/pubsub';
 
 const Container = styled.div<IThemeProps>`
   .list {
