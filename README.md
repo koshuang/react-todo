@@ -24,6 +24,22 @@ A Todo app built with React ecosystem and modular design.
 1. Custom PobSub hook for components to easily interact with each others
 1. Theme design
 
+## Modules
+### app
+`app` module is a special module which is an application module grab depends on core module and other feature modules
+
+### core
+`core` module is supposed to be a framework of an application which define the application core architecture. Currently `core` module only defines page layout, but it will evolve to handle more stuff like communication, etc.
+
+### shared
+`shared` module is a common module to give each feature module reusable utility like common components, utility classes/functions, etc.
+
+### pubsub
+`pubsub` module is a communication module to provide a way for components communicate with each other. Basically it should follow/implement `core` module's interface in order to make feature modules depends on abstract instead of implementation. In order to let application be able to switch to other implementation like `rxjs`.
+
+### todo-list
+`todo-list` module is a feature module to handle CRUD actions for todo. Providing local cache to let user can use offline.
+
 ## TODOs
 1. Responsive design for mobile
 1. Using better reactive library like Rxjs
