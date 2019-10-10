@@ -18,6 +18,7 @@ A Todo app built with React ecosystem and modular design.
 1. styled-component
 1. immer
 1. Jest / enzyme / @testing-library/react
+1. storybook
 
 ## Architecture
 1. Modular design
