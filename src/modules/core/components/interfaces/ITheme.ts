@@ -1,4 +1,5 @@
 export interface ITheme {
+  name                    : string;
   primaryColor            : string;
   infoColor               : string;
   successColor            : string;

@@ -1,6 +1,7 @@
 import { ITheme } from '@modules/core';
 
 export const theme: ITheme = {
+  name                      : 'Default Theme',
   primaryColor              : '#0097D1',
   infoColor                 : '#1890ff',
   successColor              : '#52c41a',
