@@ -21,5 +21,6 @@ const Consumer: React.FC<Props> = ({ todoItem }) => {
 };
 
 storiesOf('Modules|TodoForm', module)
+  .addParameters({ jest: ['TodoItem'] })
   .add('new', () => <Consumer />)
   .add('edit', () => <Consumer todoItem={todoItem} />);
