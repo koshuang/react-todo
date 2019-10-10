@@ -1,4 +1,8 @@
-import { configure } from '@storybook/react';
+import { addDecorator, configure } from '@storybook/react';
+import {withThemesProvider} from 'storybook-addon-styled-component-theme';
+import { theme } from '../src/modules/todo-list';
 
-// automatically import all files ending in *.stories.js
+const themes = [theme];
+
+addDecorator(withThemesProvider(themes));
 configure(require.context('../src', true, /\.stories\.tsx?$/), module);

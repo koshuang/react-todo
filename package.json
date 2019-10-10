@@ -95,6 +95,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-plugin-module-resolver": "^3.2.0",
     "react-docgen-typescript-loader": "^3.3.0",
+    "storybook-addon-styled-component-theme": "^1.2.5",
     "yarn": "^1.19.0"
   },
   "eslintConfig": {
