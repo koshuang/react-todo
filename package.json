@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
@@ -82,7 +84,18 @@
     "workbox-webpack-plugin": "4.3.1"
   },
   "devDependencies": {
-    "babel-plugin-module-resolver": "^3.2.0"
+    "@storybook/addon-actions": "^5.2.3",
+    "@storybook/addon-info": "^5.2.1",
+    "@storybook/addon-links": "^5.2.3",
+    "@storybook/addons": "^5.2.3",
+    "@storybook/cli": "^5.2.1",
+    "@storybook/react": "^5.2.3",
+    "@types/storybook__react": "^4.0.2",
+    "add": "^2.0.6",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "react-docgen-typescript-loader": "^3.3.0",
+    "yarn": "^1.19.0"
   },
   "eslintConfig": {
     "extends": "react-app"
