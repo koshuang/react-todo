@@ -2,8 +2,7 @@
 A Todo app built with React ecosystem and modular design.
 
 * Demo
-  * [demo site](https://1ms84.sse.codesandbox.io/)
-  * [codesandbox](https://codesandbox.io/s/github/koshuang/react-todo)
+  * [demo site](https://react-todo.koshuang.now.sh/)
 
 ## Features
 1. Add todo
