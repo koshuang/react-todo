@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { IThemeProps } from '@modules/core';
 import { DefaultPubSubContext } from '@modules/pubsub';
-import { AddTodo, TodoItem, TodoList, todosFacade } from '@modules/todo-list';
+import { AddTodo, TodoItem, TodoList, todoFacade } from '@modules/todo-list';
 
 const Wrapper = styled.div<IThemeProps>`
   padding: 30px;
@@ -19,7 +19,7 @@ export function TodoDashboard() {
   const context = useContext(DefaultPubSubContext);
 
   useEffect(() => {
-    setTodoItems(todosFacade.getAllTodoItems!());
+    setTodoItems(todoFacade.getAllTodoItems!());
 
     const unsubscribe = context.subscribe!('filter-todo', (data: any) => {
       setCurrentFilter(data.filter);
@@ -43,23 +43,23 @@ export function TodoDashboard() {
   );
 
   function filterTodoItems(filter: string) {
-    setTodoItems(todosFacade.getFilteredTodoItems(filter));
+    setTodoItems(todoFacade.getFilteredTodoItems(filter));
   }
 
   function addTodoItem(todoItem: TodoItem) {
-    todosFacade.add(todoItem);
+    todoFacade.add(todoItem);
 
     filterTodoItems(currentFilter);
   }
 
   function updateTodoItem(todoItem: TodoItem) {
-    todosFacade.update(todoItem);
+    todoFacade.update(todoItem);
 
     filterTodoItems(currentFilter);
   }
 
   function deleteTodoItem(todoItem: TodoItem) {
-    todosFacade.delete(todoItem);
+    todoFacade.delete(todoItem);
 
     filterTodoItems(currentFilter);
   }
