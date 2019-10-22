@@ -43,6 +43,8 @@ A Todo app built with React ecosystem and modular design.
 ## TODOs
 1. Responsive design for mobile
 1. Using better reactive library like Rxjs
+1. Integrate with backend API
+1. Offline app features
 
 ## Available Scripts
 
